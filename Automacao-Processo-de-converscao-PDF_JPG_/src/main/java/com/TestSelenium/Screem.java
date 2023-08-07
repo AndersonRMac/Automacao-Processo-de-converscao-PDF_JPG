@@ -1,5 +1,6 @@
 package com.TestSelenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,14 +55,14 @@ public class Screem extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String arquivo = text.getText();
 
+        String arquivo = text.getText();
         String local = "C:\\Users\\t_anderson.maciel\\Desktop\\TERMO\\" + arquivo;
         String url = "https://www.sejda.com/pt/pdf-to-jpg";
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
-        WebDriver navegador = new ChromeDriver(options);
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver navegador = new ChromeDriver();
 
         navegador.get(url);
         navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

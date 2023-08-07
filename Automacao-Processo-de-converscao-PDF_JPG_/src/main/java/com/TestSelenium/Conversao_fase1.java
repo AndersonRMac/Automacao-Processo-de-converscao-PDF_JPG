@@ -1,5 +1,6 @@
 package com.TestSelenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,9 +22,9 @@ public class Conversao_fase1 {
         String arquivo = arquivo_editado;
         String url = "https://www.sejda.com/pt/pdf-to-jpg";
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
-        WebDriver navegador = new ChromeDriver(options);
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver navegador = new ChromeDriver();
 
         navegador.get(url);
         navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
