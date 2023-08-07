@@ -5,12 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.time.Duration;
 import java.util.Scanner;
 
-public class Conversao_fase1 {
+public class Conversao_Classe_Teste {
     public static void main(String[] args) throws InterruptedException {
 
         Scanner in = new Scanner(System.in);

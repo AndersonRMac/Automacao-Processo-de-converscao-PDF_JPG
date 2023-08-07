@@ -4,8 +4,6 @@ import io.cucumber.java.en.When;
 
 
 public class TestCucumber {
-    public static void main(String[] args) {
-
 
         @Given("que o usuário entre no site {string}")
         public void que_o_usuário_entre_no_site(String string) {
@@ -32,5 +30,5 @@ public class TestCucumber {
             // Write code here that turns the phrase above into concrete actions
             throw new io.cucumber.java.PendingException();
         }
-    }
+
 }
