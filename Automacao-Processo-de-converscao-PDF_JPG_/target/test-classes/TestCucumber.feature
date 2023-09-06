@@ -1,6 +1,6 @@
 Feature: Validar conversão de arquivo PDF para JGP
   Scenario: Processo completo no site de conversão
-    Given que o usuário entre no site "https://www.sejda.com/pt/pdf-to-jpg"
+    Given que o navegador e aberto
     And Anexe um arquivo PDF
     And Clique em converter
     When For clicado no botão Download

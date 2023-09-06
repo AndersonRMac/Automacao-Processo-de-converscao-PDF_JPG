@@ -59,7 +59,6 @@ public class Screem extends JFrame implements ActionListener {
         String local = "C:\\Users\\t_anderson.maciel\\Desktop\\TERMO\\" + arquivo;
         String url = "https://www.sejda.com/pt/pdf-to-jpg";
 
-
         WebDriverManager.chromedriver().setup();
         WebDriver navegador = new ChromeDriver();
 
@@ -77,7 +76,6 @@ public class Screem extends JFrame implements ActionListener {
         /*Ao fazer a conversão do arquivo a página abre um novo frame,
          com isso tenho que selecionar o frame que contém o elemento
          que eu preciso para fazer o download do arquivo convertido*/
-
 
         //Clico no botão para download do arquivo.
         navegador.switchTo().frame("taskResultsFrame");
