@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +21,8 @@ public class Conversao {
     private String local = "C:\\Users\\t_anderson.maciel\\Desktop\\TERMO\\" + nome_arquvio;
     private Scanner in = new Scanner(System.in);
 
+    @Test
+    @Before
     @Given("O navegador for iniciado")
     public void oNavegadorForIniciado() {
 
@@ -29,6 +33,7 @@ public class Conversao {
 
     }
 
+    @Test
     @And("arquivo PDF for adicionado")
     public void arquivoPDFForAdicionado() {
 
@@ -37,7 +42,7 @@ public class Conversao {
         navegador.findElement(By.className("fileupload")).sendKeys(local);
 
     }
-
+    @Test
     @And("for clicado no botão de conversao")
     public void forClicadoNoBotãoDeConversao() {
 
@@ -45,7 +50,7 @@ public class Conversao {
         botaoConverter.click();
 
     }
-
+    @Test
     @And("apos a conversao for clicado no botao de download")
     public void aposAConversaoForClicadoNoBotaoDeDownload() {
 
@@ -54,7 +59,7 @@ public class Conversao {
         BtDownloadFrame.click();
 
     }
-
+    @Test
     @Then("devera ser baixado um arquivo no formato JPG")
     public void deveraSerBaixadoUmArquivoNoFormatoJPG() {
 
