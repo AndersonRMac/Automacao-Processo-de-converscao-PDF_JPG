@@ -22,7 +22,6 @@ public class Conversao {
     private Scanner in = new Scanner(System.in);
 
     @Test
-    @Before
     @Given("O navegador for iniciado")
     public void oNavegadorForIniciado() {
 
