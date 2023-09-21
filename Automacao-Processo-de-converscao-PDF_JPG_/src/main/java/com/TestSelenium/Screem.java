@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -56,11 +58,12 @@ public class Screem extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String arquivo = text.getText();
-        String local = "C:\\Users\\t_anderson.maciel\\Desktop\\TERMO\\" + arquivo;
+        String local = "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\TERMO\\" + arquivo;
         String url = "https://www.sejda.com/pt/pdf-to-jpg";
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver navegador = new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        ChromeDriver navegador = new ChromeDriver(options);
 
         navegador.get(url);
         navegador.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -76,6 +79,7 @@ public class Screem extends JFrame implements ActionListener {
         /*Ao fazer a conversão do arquivo a página abre um novo frame,
          com isso tenho que selecionar o frame que contém o elemento
          que eu preciso para fazer o download do arquivo convertido*/
+
 
         //Clico no botão para download do arquivo.
         navegador.switchTo().frame("taskResultsFrame");
