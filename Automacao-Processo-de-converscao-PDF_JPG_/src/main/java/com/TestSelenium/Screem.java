@@ -58,9 +58,9 @@ public class Screem extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String arquivo = text.getText();
-        String local = "C:\\Users\\ander\\OneDrive\\Área de Trabalho\\TERMO\\" + arquivo;
+        String local_house = "C:\\Users\\t_anderson.maciel\\Desktop\\TERMO\\" + arquivo;
+        String local_job = "C:\\Users\\ander\\OneDrive\\Desktop\\TERMO\\" + arquivo;
         String url = "https://www.sejda.com/pt/pdf-to-jpg";
-
 
         ChromeOptions options = new ChromeOptions();
         ChromeDriver navegador = new ChromeDriver(options);
@@ -70,7 +70,7 @@ public class Screem extends JFrame implements ActionListener {
         navegador.manage().window().maximize();
 
         //Encontro o elemento web no site que condiz com o upload e envio para ele o local do arquivo.
-        navegador.findElement(By.className("fileupload")).sendKeys(local);
+        navegador.findElement(By.className("fileupload")).sendKeys(local_house);
 
         //Clico no botão de conversão
         WebElement botaoConverter = navegador.findElement(By.id("convertSelectedBtn"));
