@@ -46,16 +46,20 @@ public class Steps {
     @Test
     @When("apos a conversao for clicado no botao de download")
     public void apos_a_conversao_for_clicado_no_botao_de_download() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            System.out.println("Não rolou o tempo!");;
-        }
+
         actions.ClicaBotaoDownload();
+
     }
 
     @Then("devera ser baixado um arquivo no formato JPG")
     public void devera_ser_baixado_um_arquivo_no_formato_jpg() {
+
+        try {
+            Thread.sleep(5000);
+            System.out.println("Rolou o tempo para o final");
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
 
         driver.quit();
     }

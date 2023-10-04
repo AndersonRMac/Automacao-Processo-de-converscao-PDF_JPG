@@ -20,6 +20,12 @@ public class PageActions {
         botaoConverter.click();
     }
     public void ClicaBotaoDownload(){
+        try {
+            Thread.sleep(5000);
+            System.out.println("Rolou o tempo");
+        } catch (InterruptedException e) {
+            System.out.println("Não rolou o tempo!");;
+        }
         driver.switchTo().frame("taskResultsFrame");
         WebElement botaoDownload = driver.findElement(By.id("download-btn"));
         botaoDownload.click();
